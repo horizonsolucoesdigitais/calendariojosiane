@@ -1,13 +1,14 @@
 // Firebase config
 const firebaseConfig = {
-    apiKey: "AIzaSyAnK_vQJtLNaeMFmQC6M0vCiu_ZB1E1PX0",
-    authDomain: "calendariohorizon-a66ce.firebaseapp.com",
-    projectId: "calendariohorizon-a66ce",
-    storageBucket: "calendariohorizon-a66ce.appspot.com",
-    messagingSenderId: "253407645877",
-    appId: "1:253407645877:web:007168909639fadb326efc",
-    measurementId: "G-3SNNHMEKG6"
-  };
+  apiKey: "AIzaSyCXaACxJ0jld2ACi2xfeKuYH3uHDW-hCiU",
+  authDomain: "calendariojosiane.firebaseapp.com",
+  databaseURL: "https://calendariojosiane-default-rtdb.firebaseio.com",
+  projectId: "calendariojosiane",
+  storageBucket: "calendariojosiane.firebasestorage.app",
+  messagingSenderId: "568289858009",
+  appId: "1:568289858009:web:1ffebfb67b6b42a312c9c8",
+  measurementId: "G-R82L1E4WVL"
+};
   
   if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
