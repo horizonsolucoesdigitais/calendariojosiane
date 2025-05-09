@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calendário de Conteúdo | Horizon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="branding">
+      <h1>Horizon</h1>
+      <p class="sub">Calendário de Conteúdo</p>
+    </div>
+    <div class="info-cliente">
+      <strong>Cliente: Arena R10</strong><br>
+      Plano: Padrão<br>
+      3 vídeos / mês<br>
+      8 artes / mês<br>
+      Adicionais: tráfego pago, captação
+    </div>
+  </header>
+
+  <div class="mes-navegacao">
+    <button onclick="mudarMes(-1)">&lt; Mês anterior</button>
+    <h2 id="mes-atual">Abril / 2025</h2>
+    <button onclick="mudarMes(1)">Próximo mês &gt;</button>
+  </div>
+  
+<div class="semana-header">
+  <div>Dom</div>
+  <div>Seg</div>
+  <div>Ter</div>
+  <div>Qua</div>
+  <div>Qui</div>
+  <div>Sex</div>
+  <div>Sáb</div>
+</div>
+  
+
+<div class="calendario" id="calendario"></div>
+  
+<div style="display: flex; gap: 2rem; align-items: flex-start; margin-top: 2rem;">
+  <div class="legenda">
+    <p><span style="background:#ffecec"></span> Domingo</p>
+    <p><span style="background:#d4f4fa"></span> Feriado Nacional</p>
+    <p><span style="background:#d0f0d0"></span> Postagem concluída</p>
+  </div>
+
+  <div id="project-section" style="flex: 1;">
+    <h2 style="font-weight: bold; margin-bottom: 0.5rem;">Projetos</h2>
+    <div id="project-list" style="display: flex; flex-direction: column; gap: 1rem;"></div>
+  </div>
+</div>
+
+<template id="project-template">
+  <div style="background: #fff; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative;">
+    <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+      <textarea 
+        style="flex: 1; border: 1px solid #ccc; border-radius: 0.25rem; padding: 0.5rem; resize: none;" 
+        placeholder="Digite o nome do projeto..." 
+        oninput="autoGrow(this)"></textarea>
+      
+      <!-- Botão de adicionar -->
+      <button class="add-btn" style="font-size: 1.5rem; font-weight: bold; color: #0d6efd;">+</button>
+
+      <!-- Botão de 3 pontos (menu) -->
+      <div class="menu-container" style="position: relative; display: none;">
+        <button class="menu-btn" style="font-size: 1.2rem; background: none; border: none; cursor: pointer;">⋯</button>
+        <div class="options-menu" style="display: none; position: absolute; right: 0; top: 24px; background: white; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); z-index: 100;">
+          <button class="delete-btn" style="display: block; padding: 6px 12px; width: 100%; border: none; background: none; text-align: left; color: red;">Excluir</button>
+          <button class="edit-btn" style="display: block; padding: 6px 12px; width: 100%; border: none; background: none; text-align: left;">Editar</button>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 0.25rem;">
+      <button class="see-more" style="font-size: 0.875rem; color: #0d6efd; display: none;">Ver mais</button>
+    </div>
+  </div>
+</template>
+
+
+  <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore-compat.js"></script>
+
+
+  
+<!-- Seu script deve vir por último! -->
+<script src="script.js"></script>
+</body>
+</html>

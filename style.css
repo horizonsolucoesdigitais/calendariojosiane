@@ -1,0 +1,280 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+}
+
+.header {
+  background: linear-gradient(to right, #29295c, #2d9eb5);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.branding h1 {
+  margin: 20;
+  font-size: 2em;
+}
+
+.branding .sub {
+  font-size: 0.95em;
+  opacity: 0.85;
+}
+
+.info-cliente {
+  text-align: left; /* conteúdo dentro do bloco à esquerda */
+  font-size: 0.9rem;
+  max-width: 250px; /* evita que fique estreito demais */
+  margin-left: auto; /* joga o bloco todo para a direita */
+}
+
+.mes-navegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+.mes-navegacao button {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.mes-navegacao button:hover {
+  background: #084298;
+}
+
+.calendario {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin: 0 20px;
+}
+
+.semana-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 0 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  font-size: 0.95em;
+  padding: 6px 0;
+}
+
+.dia {
+  position: relative;
+  min-height: 100px;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  word-break: break-word;
+  white-space: normal;
+  font-size: 14px;
+}
+
+.domingo {
+  background-color: #ffecec;
+}
+
+.feriado {
+  background-color: #d4f4fa;
+}
+
+.concluido {
+  background-color: #d0f0d0 !important;
+}
+
+.menu-dia {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.menu-opcoes {
+  display: none;
+  position: absolute;
+  top: 25px;
+  right: 5px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 100;
+  min-width: 160px;
+}
+
+.menu-opcoes button {
+  display: block;
+  padding: 6px 10px;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.menu-opcoes button:hover {
+  background: #f1f1f1;
+}
+
+.icone {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+  margin-top: 5px;
+  word-break: break-word;
+}
+
+.icone .remover {
+  margin-left: 6px;
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.obs {
+  font-size: 0.8em;
+  font-style: italic;
+  background: #f9f9f9;
+  margin-top: 5px;
+  padding: 4px;
+  border-left: 2px solid #ccc;
+  display: none;
+  word-break: break-word;
+}
+
+.legenda {
+  margin: 20px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.legenda span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+#project-section {
+  background: #ffffff;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  max-width: 100%;
+}
+
+#project-list textarea {
+  width: 100%;
+  min-height: 40px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#project-list .see-more {
+  font-size: 0.85rem;
+  color: #0d6efd;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 4px;
+}
+
+#project-list .see-more:hover {
+  text-decoration: underline;
+}
+
+#project-list .add-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #0d6efd;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+#project-list .add-btn:hover {
+  color: #084298;
+}
+
+.menu-container {
+  display: none;
+  position: relative;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 6px;
+  color: #555;
+}
+
+.menu-btn:hover {
+  color: #000;
+}
+
+.options-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 24px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 10;
+  min-width: 140px;
+}
+
+.options-menu button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.options-menu button:hover {
+  background: #f1f1f1;
+}
+
+.options-menu .delete-btn {
+  color: red;
+}
